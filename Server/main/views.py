@@ -15,7 +15,10 @@ def two(request):
 def three(request):
     return render(request,'three.html')
 
+def writeinfo(request):
+    return render(request,'writeinfo.html')
 
-class infoviewset(viewsets.infoviewset):
-    queryset = infolist.objectes.all()
+
+class infoviewset(viewsets.ModelViewSet):
+    queryset = infolist.objects.all()
     serializer_class = listserializers

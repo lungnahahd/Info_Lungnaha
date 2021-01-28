@@ -4,4 +4,4 @@ from .models import infolist
 class listserializers(serializers.ListSerializer):
     class Meta:
         model = infolist
-        fields = ('id','title','information','now')
+        fields = ('id','title','information')

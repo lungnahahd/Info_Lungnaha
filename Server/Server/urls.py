@@ -14,5 +14,6 @@ urlpatterns = [
     path('one.html',main.views.one),
     path('two.html',main.views.two),
     path('three.html',main.views.three),
-    url()
+    path('writeinfo.html',main.views.writeinfo),
+    #url(r'^writeinfo.html',include(router.urls)),
 ]
