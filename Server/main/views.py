@@ -19,6 +19,8 @@ def writeinfo(request):
     return render(request,'writeinfo.html')
 
 
+
+
 class infoviewset(viewsets.ModelViewSet):
     queryset = infolist.objects.all()
     serializer_class = listserializers
