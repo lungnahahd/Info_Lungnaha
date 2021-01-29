@@ -18,6 +18,9 @@ def three(request):
 def writeinfo(request):
     return render(request,'writeinfo.html')
 
+def result(request):
+    return render(request,'result.html')
+
 
 
 
