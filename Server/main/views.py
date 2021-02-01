@@ -4,7 +4,10 @@ from rest_framework import viewsets
 from .models import infolist
 
 def home(request):
-    return render(request,'home.html')
+    return render(request,'home.php')
+
+def sam(request):
+    return render(request,'sample.php')
 
 def one(request):
     return render(request,'one.html')
