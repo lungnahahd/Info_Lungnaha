@@ -4,6 +4,8 @@ import main.views
 from django.conf.urls import url,include
 from rest_framework import routers
 from main.views import infoviewset
+from django.conf import settings
+from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
 router.register('main',infoviewset)

@@ -24,7 +24,10 @@
 	<header>
 		<h1>
             LUNGNAHA
-            <?php echo "go"; ?>
+            <?php 
+              error_reporting(E_ALL);
+              ini_set("display_errors",1);
+              echo "go"; ?>
         </h1>
 	</header>
 	<nav>
