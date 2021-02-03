@@ -13,7 +13,6 @@ router.register('main',infoviewset)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main.views.home),
-    path('sample.php',main.views.sam)
     # path('one.html',main.views.one),
     # path('two.html',main.views.two),
     # path('three.html',main.views.three),
