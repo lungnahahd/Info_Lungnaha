@@ -36,19 +36,23 @@
         </ul>
     </nav>
     <article>
-     <form action="/result.html">
-          <h3>제목 : </h3>
-          <input type="text" name="title">
+     <form action="{% url 'saveinfo' %}" method="POST">
+          {% csrf_token %}
+          <div>
+            <label for="title">제목 : </label>
+            <input type="text" name="title" id="title">
+          </div>
           <br>
           <br>
-          <h4>정보 입력 : </h4>
-          <textarea cols="40" rows="20" name="information"></textarea>
+          <div>
+            <label for="information">정보 입력 : </label>
+            <textarea cols="40" rows="20" name="information" id="information"></textarea>
+          </div>
           <br>
           <br>
           <input type="submit" value="정보 등록">
           <br>
           <br>
-          <a href="/result.html">정보 확인하러 GO!!!!</a>
      </form>
     </article>
 </body>
