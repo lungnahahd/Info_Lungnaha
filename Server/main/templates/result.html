@@ -1,25 +1,15 @@
 <!DOCTYPE html>
-<script type="text/javascript">
-     function getParam(param){
-          var arr = [];
-          var params = location.search.substr(location.search.indexOf("?")+1);
-          var value = "";
-          params = params.split("&");
-          for(var i = 0; i < params.length;i++){
-               temp = params[i].split("=");
-               if([temp[0]]==param){value=temp[1];}
-          }
-          var count = 0;
-         
-          var devalue = decodeURI(value);
-          return devalue;
-     }
-     var title = getParam("title");
-     var information = getParam("information");
-     document.write('제목 : ' + title + '<br>');
-     document.write('정보 : ' + information + '<br>');    
-</script>
-<html>
+<br>
+{% for result in resultlist %}
+     <main role="main" class="container">
+          <h1> 제목 : {{ result.title}}</h1>
+          <br>
+          <br>
+          <h4> 정보 내용 : {{result.information}}</h4>
+          <br>
+          <br>
+     </main>
+{% endfor %}
 <head>
      <meta charset="utf-8">
 </head>

@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .serializers import listserializers
 from rest_framework import viewsets
 from .models import infolist
+from django.http import HttpResponse
 
 def home(request):
     return render(request,'home.html')
@@ -28,6 +29,10 @@ def saveinfo(request):
       post.information = request.POST['information']
       post.save()
     return redirect('writeinfo.html')  
+
+def showresult(request):
+    resultlist = infolist.objects.all()
+    return render(request,'result.html', {'resultlist' : resultlist})
 
 
 class infoviewset(viewsets.ModelViewSet):
