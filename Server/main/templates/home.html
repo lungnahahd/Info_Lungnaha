@@ -24,32 +24,18 @@
 	<header>
 		<h1>
             LUNGNAHA
-            <?php 
-              error_reporting(E_ALL);
-              ini_set("display_errors",1);
-              echo "go"; ?>
         </h1>
 	</header>
 	<nav>
         <ul>
-    <?php 
-        echo file_get_contents("list.html");
-    ?>
+          <li><a href="http://localhost/one.html">김HD</a></li>
+          <li><a href="http://localhost/two.html">한국외국어대학교</a></li>
+          <li><a href="http://localhost/three.html">기아타이거즈</a></li>
+          <li><a href="http://localhost/writeinfo.html">게시판</a></li>
         </ul>
     </nav>
     <article>
-      <?php 
-        if(id == 1){
-            echo file_get_contents("one.html");
-        }elseif(id == 2){
-            echo file_get_contents("two.html");
-        }elseif(id ==3){
-            echo file_get_contents("three.html");
-        }else{
-            echo "저만의 비밀스러운 사이트에 오신걸 환영합니다.";
-        }
-      ?>
-  </article>
-
+      저의 비밀스러운 사이트에 오신 걸 환영합니다 ^^
+    </article>
 </body>
 </html>
