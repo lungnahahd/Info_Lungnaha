@@ -1,5 +1,44 @@
+
 <!DOCTYPE html>
-<br>
+<html>
+<head>
+     <meta charset="utf-8">
+     <style>
+       header{
+         border-bottom: 1px solid gray;
+         padding: 20px;
+       }
+       nav{
+         border-right: 1px solid gray;
+         width: 200px;
+         float: left;
+         border-style: hidden;
+       }
+       article{
+         float: left;
+         padding-left: 20px;
+         border-left: 1px solid gray;
+       }
+     </style>
+</head>
+<body>
+	<header>
+    <h1>
+      <a href="http://localhost:8000/">LUNGNAHA</a>
+    </h1>	
+  </header>
+  
+	<nav>
+        <ul>
+          <li><a href="one.html">김HD</a></li>
+          <li><a href="two.html">한국외국어대학교</a></li>
+          <li><a href="three.html">기아타이거즈</a></li>
+          <li><a href="writeinfo.html">게시판</a></li>
+          <li><a href="/result.html">목록으로...</a></li>
+        </ul>
+    </nav>
+    <article>
+     <br>
 {% for result in resultlist %}
      <main role="main" class="container">
           <h1> 제목 : {{ result.title}}</h1>
@@ -10,13 +49,6 @@
           <br>
      </main>
 {% endfor %}
-<head>
-     <meta charset="utf-8">
-</head>
-<body>
-     <a href="writeinfo.html">뒤로 가기</a>
-     <br>
-     <br>
-     <a href="http://localhost:8000/">홈으로...</a>
+    </article>
 </body>
 </html>
