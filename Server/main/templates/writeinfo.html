@@ -36,7 +36,7 @@
         </ul>
     </nav>
     <article>
-     <form action="{% url 'saveinfo' %}" method="POST">
+     <form action="{% url 'saveinfo' %}" method="post">
           {% csrf_token %}
           <div>
             <label for="title">제목 : </label>

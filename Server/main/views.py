@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .serializers import listserializers
 from rest_framework import viewsets
 from .models import infolist
@@ -21,7 +21,13 @@ def writeinfo(request):
 def result(request):
     return render(request,'result.html')
 
-
+def saveinfo(request):
+    if(request.method == 'POST'):
+      post = infolist()
+      post.title = request.POST['title']
+      post.information = request.POST['information']
+      post.save()
+    return redirect('writeinfo.html')  
 
 
 class infoviewset(viewsets.ModelViewSet):
