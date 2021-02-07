@@ -34,6 +34,9 @@ def showresult(request):
     resultlist = infolist.objects.all()
     return render(request,'result.html', {'resultlist' : resultlist})
 
+def showdetail(request):
+    return render(request,'infodetail.html')
+
 
 class infoviewset(viewsets.ModelViewSet):
     queryset = infolist.objects.all()
