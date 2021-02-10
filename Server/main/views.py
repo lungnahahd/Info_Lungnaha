@@ -6,6 +6,8 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.template.defaultfilters import register
+from django.contrib.auth.models import User
+from django.contrib import auth
 
 def home(request):
     return render(request,'home.html')
@@ -53,7 +55,14 @@ def login(request):
     return render(request,'login.html')
 
 def signup(request):
-    return render(request,'signup.html')
+    if request.method =="POST":
+        if request.POST["password1"] == request.POST["password2"]:
+            user = User.objects.create_user(
+                username = request.POST["id"], password = request.POST["password1"])
+            auth.login(request, user)
+            return redirect('http://localhost:8000/')
+        return render(request,'signup.html')
+    return render(request, 'signup.html')
 
 
 class infoviewset(viewsets.ModelViewSet):
