@@ -39,10 +39,11 @@
     <article>
       <div class="container">
           <h1>ID를 입력하고 권한을 맘껏 얻어보세요 ~ ^^</h1>
-          <form action ="">
+          <form method="POST" action ="{% url 'login' %}">
+              {% csrf_token %}
               아이디 :
               <br>
-              <input name="id" type="text">
+              <input name="username" type="text">
               <br>
               비밀번호 :
               <br>

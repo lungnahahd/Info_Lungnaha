@@ -39,10 +39,11 @@
     <article>
         <div class="container">
             <h1>렁나하의 동료가 되겠나?</h1>
-            <form action="">
+            <form action="{% url 'signup' %}" method="post">
+              {% csrf_token %}
                 아이디 : 
                 <br>
-                <input name="id" type="text">
+                <input name="username" type="text">
                 <br>
                 비밀번호 :
                 <br>
