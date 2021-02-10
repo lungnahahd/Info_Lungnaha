@@ -49,10 +49,11 @@ def showdetail(request):
         return render(request,'infodetail.html',{'detail':detail})        
         
 
-        # post = infolist()
-        # post.title = request.POST['title']
-        # post.information = request.POST['information']
-        # return redirect('infodetail.html')
+def login(request):
+    return render(request,'login.html')
+
+def signup(request):
+    return render(request,'signup.html')
 
 
 class infoviewset(viewsets.ModelViewSet):
