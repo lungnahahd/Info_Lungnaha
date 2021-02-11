@@ -50,6 +50,15 @@
               <input name="password" type="password">
               <br><br>
               <input type="submit" class="btn btn-primary" value="GO!!!">
+              {% if user.is_authenticated %}
+              <script type="text/javascript">
+                alert("나의 동료여 환영합니다~");
+              </script>
+              {% else %}
+                <script type="text/javascript">
+                  alert("어! 뭔가가 잘 못 됬구요...");
+                </script>
+              {% endif %}
           </form>
       </div>
     </article>

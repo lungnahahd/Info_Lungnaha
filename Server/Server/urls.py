@@ -25,4 +25,5 @@ urlpatterns = [
     #path('login/',main.views.login,name = 'login'),
     #path('signup/',main.views.signup,name='signup'),
     path('signup.html/',main.views.signup,name='signup'),
+    path('logout',main.views.logout,name='logout'),
 ] 
