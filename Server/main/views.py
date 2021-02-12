@@ -51,9 +51,12 @@ def showdetail(request):
         return render(request,'infodetail.html',{'detail':detail})        
 
 def logout(request):
-    print("함수가 실행되었습니다.")
-    auth.logout(request)
-    return redirect('http://localhost:8000/')       
+    if request.method == "POST":    
+        print("함수가 실행되었습니다.")
+        auth.logout(request)
+        return redirect('http://localhost:8000/')
+    else:
+        return render(request,'logout.html')       
 
 def login(request):
     if request.method == "POST":

@@ -26,11 +26,11 @@
       <a href="http://localhost:8000/">LUNGNAHA</a>
     </h1>	
   </header>
-  <script type="text/javascript">
-    function msg(){
-      alert("다음에 또 찾아와 주세요~")
-    }
-  </script>
+    <script type="text/javascript">
+        function msg(){
+            alert("사이트에서 떠나게 되었습니다... 잘가~~");
+        }
+    </script>
 	<nav>
         <ul>
           <li><a href="one.html">김HD</a></li>
@@ -41,10 +41,15 @@
         </ul>
     </nav>
     <article>
-      저의 비밀스러운 사이트에 오신 걸 환영합니다 ^^
-      <input type="button" onclick="location.href ='login.html'" value="로그인">
-      <input type="button" onclick="location.href='signup.html'" value="회원가입">
-      <input type="button" onclick="location.href='logout.html'" value="로그아웃">
+      <div class="container">
+          <h1>ID를 입력하고 권한을 맘껏 얻어보세요 ~ ^^</h1>
+          <form method="POST" action ="{% url 'logout' %}">
+              {% csrf_token %}
+              <p>정말 제 사이트에서 나가시겠습니까? 설마...</p>
+              <br><br>
+              <input type="submit" class="btn btn-primary" onclick="msg()" value="떠나기">
+          </form>
+      </div>
     </article>
   
 </body>
