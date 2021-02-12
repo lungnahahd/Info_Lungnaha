@@ -42,10 +42,9 @@
     </nav>
     <article>
       <div class="container">
-          <h1>ID를 입력하고 권한을 맘껏 얻어보세요 ~ ^^</h1>
+          <h1>정말 제 사이트에서 나가시겠습니까? 설마...</h1>
           <form method="POST" action ="{% url 'logout' %}">
               {% csrf_token %}
-              <p>정말 제 사이트에서 나가시겠습니까? 설마...</p>
               <br><br>
               <input type="submit" class="btn btn-primary" onclick="msg()" value="떠나기">
           </form>
