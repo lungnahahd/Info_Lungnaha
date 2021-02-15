@@ -36,6 +36,16 @@
           <li><a href="/result.html">목록으로...</a></li>
         </ul>
     </nav>
+    {% if user.is_authenticated %}
+      <span>
+        <input type="button" value="잘못된 정보 수정하기">
+        <input type="button" value="쓸데 없는 정보 버리기">
+      </span>
+    {% else %}
+      <script type="text/javascript">
+        alert("해당 정보는 열람만 가능합니다. 수정 및 삭제는 렁나하만 가능합니다 ^^");
+      </script>
+    {% endif %}
     <article>
          <p>제목 : {{detail.title}}</p>
          <br>
