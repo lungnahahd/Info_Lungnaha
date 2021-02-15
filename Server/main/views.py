@@ -47,7 +47,6 @@ def showdetail(request):
         code = request.POST.get('id')
         recode = code[:-1]
         detail = infolist.objects.get(id = recode)
-        # detail = infolist.objects.get(information = request)
         return render(request,'infodetail.html',{'detail':detail})        
 
 def logout(request):
@@ -79,6 +78,17 @@ def signup(request):
             auth.login(request, user)
             return redirect('http://localhost:8000/')
     return render(request,'signup.html')
+
+@method_decorator(csrf_exempt,name='dispatch')
+def deleteinfo(request):
+    if request.method == "GET":
+        return render(request,'http://localhost:8000/')
+    elif request.method == "POST":
+        code = request.POST.get('id')
+        detail = infolist.objects.get(id = code)
+        detail.delete()
+        return redirect('/result.html')        
+        return render(request,'result.html') 
 
 
 class infoviewset(viewsets.ModelViewSet):
