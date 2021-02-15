@@ -27,8 +27,11 @@
     </h1>	
   </header>
   <script>
-    function sign(){
+    function sign_del(){
       alert("쓸데 없는 정보가 버려졌습니다!!");
+    }
+    function sign_change(){
+      alert("정보 변경을 위해 이동하겠습니다!!");
     }
   </script>
   
@@ -44,11 +47,11 @@
 
     {% if user.is_authenticated %}
       <form action="{% url 'deleteinfo' %}" method="post">
-        <input type="submit" value="쓸데 없는 정보 버리기"/>
+        <input type="submit" onclick="sign_del()" value="쓸데 없는 정보 버리기"/>
         <input type="hidden" name="id" value="{{detail.id}}"/>
       </form>
-      <form >
-        <input type="submit" onclick="sign()" value="잘못된 정보 수정하기"/>
+      <form action="{% url 'changedata' %}" method="post" >
+        <input type="submit" onclick="sign_change()" value="잘못된 정보 수정하기"/>
         <input type="hidden" name="id" value="{{detail.id}}"/>
       </form>
     {% else %}

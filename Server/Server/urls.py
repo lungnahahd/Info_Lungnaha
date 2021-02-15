@@ -25,4 +25,6 @@ urlpatterns = [
     path('signup.html/',main.views.signup,name='signup'),
     path('logout.html/',main.views.logout,name='logout'),
     path('deleteinfo',main.views.deleteinfo,name='deleteinfo'),
+    path('changedata',main.views.changedata, name='changedata'),
+    path('update',main.views.update, name='update'),
 ] 
