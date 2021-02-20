@@ -111,6 +111,9 @@ def update(request):
         return redirect('/result.html')
 
 
+def editor(request):
+    return render(request,'editor.html')
+
 
 class infoviewset(viewsets.ModelViewSet):
     queryset = infolist.objects.all()
