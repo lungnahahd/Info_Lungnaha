@@ -4,9 +4,11 @@ import main.views
 from django.conf.urls import url,include
 from rest_framework import routers
 from main.views import infoviewset
-
 from django.conf import settings
 from django.conf.urls.static import static
+
+from django.contrib.admin.views.decorators import staff_member_required
+from django.views.decorators.cache import never_cache
 
 router = routers.DefaultRouter()
 router.register('main',infoviewset)
@@ -28,6 +30,6 @@ urlpatterns = [
     path('changedata',main.views.changedata, name='changedata'),
     path('update',main.views.update, name='update'),
     path('editor.html/',main.views.editor),
-] 
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 
-#urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
+]  + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

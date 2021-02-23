@@ -42,12 +42,12 @@
         </ul>
     </nav>
     <article>
-       <textarea id='editor' name="editor"></textarea> 
-      <script type="text/javascript">
-          CKEDITOR.replace('editor',{
-            filebrowserUploadUrl:'/mine/imageUpload.do'
-          });
-      </script>
+      <form action="" method="POST" >
+        {% csrf_token %}
+        {{ form.media}}
+        {{form.as_p}}
+      </form>
+      <input type="submit" value="포스팅">
     </article>
 </body>
 </html>

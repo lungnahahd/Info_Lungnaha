@@ -9,6 +9,9 @@ from django.template.defaultfilters import register
 from django.contrib.auth.models import User
 from django.contrib import auth
 
+from.forms import infopost
+
+
 def home(request):
     return render(request,'home.html')
 
@@ -112,7 +115,8 @@ def update(request):
 
 
 def editor(request):
-    return render(request,'editor.html')
+    form = infopost()
+    return render(request,'editor.html',{'form':form})
 
 
 class infoviewset(viewsets.ModelViewSet):
