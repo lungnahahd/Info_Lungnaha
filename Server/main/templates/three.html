@@ -21,17 +21,17 @@
      </style>
      <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 </head>
+<script type="text/javascript">
+  function msg(){
+      alert("정보 입력이 완료되었습니다 ^^");
+  }
+</script>
 <body>
 	<header>
     <h1>
       <a href="http://localhost:8000/">LUNGNAHA</a>
     </h1>	
   </header>
-  <script type="text/javascript">
-    function msg(){
-      alert("다음에 또 찾아와 주세요~")
-    }
-  </script>
 	<nav>
         <ul>
           <li><a href="one.html">김HD</a></li>
@@ -42,12 +42,13 @@
         </ul>
     </nav>
     <article>
-      <form action="" method="POST" >
+      <form action="{% url 'saveinfo' %}" method="post" >
         {% csrf_token %}
-        {{ form.media}}
-        {{form.as_p}}
+        {{ form.media|safe}}
+        {{form.as_p|safe}}
+        <input onclick="msg()" type="submit" value="포스팅">
       </form>
-      <input type="submit" value="포스팅">
     </article>
 </body>
 </html>
+

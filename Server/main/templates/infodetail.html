@@ -63,7 +63,7 @@
          <p>제목 : {{detail.title}}</p>
          <br>
          <br>
-         <p>내용 : {{detail.information}}</p>
+         <p>내용 : {{detail.information|safe}}</p>
          {% if detail.mainphoto %}
           <p>
             관련 자료 : <img src="{{ detail.mainphoto.url }}" alt="{{ detail.mainphoto }}">

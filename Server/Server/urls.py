@@ -29,7 +29,6 @@ urlpatterns = [
     path('deleteinfo',main.views.deleteinfo,name='deleteinfo'),
     path('changedata',main.views.changedata, name='changedata'),
     path('update',main.views.update, name='update'),
-    path('editor.html/',main.views.editor),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
 ]  + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

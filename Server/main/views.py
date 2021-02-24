@@ -36,8 +36,9 @@ def saveinfo(request):
       post = infolist()
       post.title = request.POST['title']
       post.information = request.POST['information']
+      post.information = post.information
       post.save()
-    return redirect('http://localhost:8000/')  
+    return redirect('http://localhost:8000/')
 
 def showresult(request):
     resultlist = infolist.objects.all()
@@ -115,9 +116,6 @@ def update(request):
         return redirect('/result.html')
 
 
-def editor(request):
-    form = infopost()
-    return render(request,'editor.html',{'form':form})
 
 
 class infoviewset(viewsets.ModelViewSet):
