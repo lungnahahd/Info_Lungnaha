@@ -11,6 +11,8 @@ from django.contrib import auth
 
 from.forms import infopost
 
+def sample(request):
+    return render(request,'index.html')
 
 def home(request):
     return render(request,'home.html')
