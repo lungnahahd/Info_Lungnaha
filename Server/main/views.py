@@ -22,7 +22,8 @@ def two(request):
     return render(request,'two.html')
 
 def three(request):
-    return render(request,'three.html')
+    form = infopost()
+    return render(request,'three.html',{'form':form})
 
 def writeinfo(request):
     return render(request,'writeinfo.html')
