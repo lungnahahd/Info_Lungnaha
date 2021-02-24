@@ -11,8 +11,32 @@ from django.contrib import auth
 
 from.forms import infopost
 
+@method_decorator(csrf_exempt,name='dispatch')
+def showdetail(request):
+    if request.method == "GET":
+        return render(request,'infodetail.html')
+    elif request.method == "POST":
+        code = request.POST.get('id')
+        recode = code[:-1]
+        detail = infolist.objects.get(id = recode)
+        return render(request,'infodetail.html',{'detail':detail}) 
+
+
+
+
+@method_decorator(csrf_exempt,name='dispatch')
+def postview(request):
+    if request.method == "GET":
+        return render(request,'post.html')
+    elif request.method == "POST":
+        code = request.POST.get('id')
+        recode = code[:-1]
+        detail = infolist.objects.get(id = recode)
+        return render(request, 'post.html',{'detail': detail})
+
 def sample(request):
-    return render(request,'index.html')
+    resultlist = infolist.objects.all()
+    return render(request,'index.html', {'resultlist' : resultlist})
 
 def home(request):
     return render(request,'home.html')

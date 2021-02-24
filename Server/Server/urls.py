@@ -31,5 +31,6 @@ urlpatterns = [
     path('update',main.views.update, name='update'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('index.html/', main.views.sample),
+    path('index.html/post.html',main.views.postview),
 
 ]  + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
