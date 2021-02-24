@@ -19,6 +19,7 @@
          border-left: 1px solid gray;
        }
      </style>
+     <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 </head>
 <body>
 	<header>
@@ -26,35 +27,22 @@
       <a href="http://localhost:8000/">LUNGNAHA</a>
     </h1>	
   </header>
-  
+  <script type="text/javascript">
+    function msg(){
+      alert("다음에 또 찾아와 주세요~")
+    }
+  </script>
 	<nav>
         <ul>
-          <li><a href="one.html">김HD</a></li>
+          <li><a href="one.html">렁나하 소개</a></li>
           <li><a href="two.html">업데이트 중</a></li>
           <li><a href="three.html">정보 입력</a></li>
-          <li><a href="writeinfo.html">게시판</a></li>
+          <li><a href="/writeinfo.html">업데이트 중</a></li>
           <li><a href="/result.html">목록으로...</a></li>
         </ul>
     </nav>
     <article>
-     <form action="{% url 'saveinfo' %}" method="post">
-          {% csrf_token %}
-          <div>
-            <label for="title">제목 : </label>
-            <input type="text" name="title" id="title">
-          </div>
-          <br>
-          <br>
-          <div contenteditable="true">
-            <label for="information">정보 입력 : </label>
-            <textarea cols="40" rows="20" name="information" id="information"></textarea>
-          </div>
-          <br>
-          <br>
-          <input type="submit" value="정보 등록">
-          <br>
-          <br>
-     </form>
+      <h2>업데이트 진행 중입니다. 조금만 기다려 주세요 ^^</h2>
     </article>
 </body>
 </html>
