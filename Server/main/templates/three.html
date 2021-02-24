@@ -48,6 +48,13 @@
         {{form.as_p|safe}}
         <input onclick="msg()" type="submit" value="포스팅">
       </form>
+      {% if user.is_authenticated %}
+      {% else %}
+      <script type="text/javascript">
+        alert("죄송합니다. 렁나하 인증 후, 이용해주세요...");
+        location.href = "/";
+      </script>
+      {% endif %}
     </article>
 </body>
 </html>
