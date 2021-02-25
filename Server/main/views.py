@@ -12,7 +12,9 @@ from django.contrib import auth
 from.forms import infopost
 
 
-
+def upload(request):
+    form = infopost()
+    return render(request,'upload.html',{'form':form})
 
 
 @method_decorator(csrf_exempt,name='dispatch')
@@ -54,7 +56,7 @@ def saveinfo(request):
       post.information = request.POST['information']
       post.information = post.information
       post.save()
-    return redirect('http://localhost:8000/')
+    return redirect('http://localhost:8000/index.html')
 
 def showresult(request):
     resultlist = infolist.objects.all()

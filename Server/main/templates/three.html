@@ -32,15 +32,6 @@
       <a href="http://localhost:8000/">LUNGNAHA</a>
     </h1>	
   </header>
-	<nav>
-        <ul>
-          <li><a href="one.html">렁나하 소개</a></li>
-          <li><a href="two.html">업데이트 중</a></li>
-          <li><a href="three.html">정보 입력</a></li>
-          <li><a href="/writeinfo.html">업데이트 중</a></li>
-          <li><a href="/result.html">목록으로...</a></li>
-        </ul>
-    </nav>
     <article>
       <form action="{% url 'saveinfo' %}" method="post" >
         {% csrf_token %}

@@ -12,7 +12,7 @@
   <title>Welcome! LUNGNAHA WORLD :)</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="{% static 'main/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/bootstrap/css/bootstrap.min.css' %}"  rel="stylesheet">
 
   <!-- Custom fonts for this template -->
   <link href="{% static 'main/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
@@ -43,7 +43,7 @@
             <a class="nav-link" href="http://localhost:8000/about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8000/three.html">Post</a>
+            <a class="nav-link" href="http://localhost:8000/post.html">Sample Post</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:8000/contact.html">Contact</a>
@@ -53,42 +53,35 @@
     </div>
   </nav>
 
+
+
+  
+
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('{% static 'main/img/lungnaha_Big.png' %}')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Lungnaha</h1>
-            <span class="subheading">My First Tech/Info Blog</span>
+          <div class="post-heading">
+            <h1>Written By LUNGNAHA</h1>
           </div>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- Post Content -->
+  <article>
+    <form action="{% url 'saveinfo' %}" method="post" >
+      {% csrf_token %}
+      {{ form.media|safe}}
+      {{form.as_p|safe}}
+      <input  type="submit" value="포스팅">
+    </form>
+  </article>
 
-
-  <!-- Main Content -->
-  {% for result in resultlist %}
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <hr>
-        <div class="post-preview">
-          <form method="post" action="post.html">
-            <h2 class="post-title">{{result.title}}</h2>
-            <h6 class="post-subtitle">Written By Lungnaha</h3>
-            <input type="hidden" name="id" value="{{result.id}}"/>
-            <input type="submit" value="정보 열람하기"/>
-          </form>
-        </div>
-        <hr>
-        </div>
-      </div>
-    </div>
- {% endfor %}
+  <hr>
 
   <!-- Footer -->
   <footer>
@@ -132,7 +125,7 @@
   <script src="{% static 'main/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="{% static 'main/js/clean-blog.min.js' %}"></script>
+  <script src="(% static 'main/js/clean-blog.min.js' %}"></script>
 
 </body>
 
