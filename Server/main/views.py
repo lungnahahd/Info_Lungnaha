@@ -12,6 +12,9 @@ from django.contrib import auth
 from.forms import infopost
 
 
+def contactme(request):
+    return render(request,'contact.html')
+
 def aboutme(request):
     return render(request,'about.html')
 
