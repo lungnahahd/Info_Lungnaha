@@ -12,10 +12,10 @@
   <title>Clean Blog - Start Bootstrap Theme</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="{% static'main/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="{% static'main/vendor/fontawesome-free/css/all.min.css %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'main/vendor/fontawesome-free/css/all.min.css'  %}" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -43,10 +43,13 @@
             <a class="nav-link" href="http://localhost:8000/about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8000/three.htmlthree.html">Sample Post</a>
+            <a class="nav-link" href="http://localhost:8000/three.htmlthree.html">Post</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:8000/contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Authedicate</a>
           </li>
         </ul>
       </div>
@@ -54,27 +57,31 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/about-bg.jpg')">
+  <header class="masthead" style="background-image: url('{% static 'main/img/lungnaha_Big.png' %}')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
             <h1>About Me</h1>
-            <span class="subheading">This is what I do.</span>
+            <span class="subheading">This is My Achievement.</span>
           </div>
         </div>
       </div>
     </div>
   </header>
-
   <!-- Main Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+        <p>구일초등학교 재학 중 전학</p>
+        <p>보라매초등학교 졸업</p>
+        <p>성남중학교 졸업</p>
+        <p>성남고등학교 졸업</p>
+        <p>한국외국어대학교 입학</p>
+        <p>6사단 청성부대 무사 전역</p>
+        <p>Ubisam 현장실습 수료</p>
+        <p>한국외국어대학교 3학년 재학 중</p>
       </div>
     </div>
   </div>

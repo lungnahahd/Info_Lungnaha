@@ -12,6 +12,9 @@ from django.contrib import auth
 from.forms import infopost
 
 
+def aboutme(request):
+    return render(request,'about.html')
+
 def upload(request):
     form = infopost()
     return render(request,'upload.html',{'form':form})
