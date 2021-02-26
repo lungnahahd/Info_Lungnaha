@@ -43,7 +43,7 @@
             <a class="nav-link" href="http://localhost:8000/about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8000/three.html">Sample Post</a>
+            <a class="nav-link" href="http://localhost:8000/three.html">Post</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:8000/contact.html">Contact</a>
@@ -62,8 +62,21 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>{{detail.title}}</h1>
+            <h1>
+              {{detail.title}}
+            </h1>
             <h2 class="subheading">Written By LUNGNAHA</h2>
+            {% if user.is_authenticated %}
+            <form action="{% url 'deleteinfo' %}" method="post">
+              <input type="submit" onclick="sign_del()" value="쓸데 없는 정보 버리기"/>
+              <input type="hidden" name="id" value="{{detail.id}}"/>
+            </form>
+            <form action="{% url 'changedata' %}" method="post" >
+              <input type="submit" onclick="sign_change()" value="잘못된 정보 수정하기"/>
+              <input type="hidden" name="id" value="{{detail.id}}"/>
+            </form>
+            {% else %}
+            {% endif %}
           </div>
         </div>
       </div>

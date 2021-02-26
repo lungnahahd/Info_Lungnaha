@@ -50,6 +50,7 @@ def writeinfo(request):
 def result(request):
     return render(request,'result.html')
 
+@method_decorator(csrf_exempt,name='dispatch')
 def saveinfo(request):
     if(request.method == 'POST'):
       post = infolist()
@@ -57,7 +58,7 @@ def saveinfo(request):
       post.information = request.POST['information']
       post.information = post.information
       post.save()
-    return redirect('http://localhost:8000/index.html')
+    return redirect('/')
 
 def showresult(request):
     resultlist = infolist.objects.all()
@@ -111,7 +112,7 @@ def deleteinfo(request):
         code = request.POST.get('id')
         detail = infolist.objects.get(id = code)
         detail.delete()
-        return redirect('/result.html')
+        return redirect('/')
 
 @method_decorator(csrf_exempt,name='dispatch')
 def changedata(request):
