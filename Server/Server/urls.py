@@ -30,7 +30,7 @@ urlpatterns = [
     path('changedata',main.views.changedata, name='changedata'),
     path('update',main.views.update, name='update'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('index.html/', main.views.mainview),
+    path('home.html/', main.views.home),
     path('index.html/post.html',main.views.postview),
     path('post.html',main.views.upload),
 
