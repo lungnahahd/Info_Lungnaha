@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 class infolist (models.Model):
     objects = models.Manager()
     title = models.CharField(max_length=200)
-    information = RichTextUploadingField(blank=True, null=True)
+    information = RichTextUploadingField(null=True)
     # title = models.CharField(max_length=30)
     # information = models.CharField(max_length=500)
     # id = models.AutoField(primary_key=True)

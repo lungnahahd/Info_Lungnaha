@@ -15,7 +15,7 @@ router.register('main',infoviewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main.views.home),
+    path('', main.views.mainview),
     path('one.html',main.views.one),
     path('two.html',main.views.two),
     path('three.html',main.views.three),
@@ -30,9 +30,9 @@ urlpatterns = [
     path('changedata',main.views.changedata, name='changedata'),
     path('update',main.views.update, name='update'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('index.html/', main.views.sample),
+    path('index.html/', main.views.mainview),
     path('index.html/post.html',main.views.postview),
-    path('post.html',main.views.upload)
+    path('post.html',main.views.upload),
 
 
 ]  + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

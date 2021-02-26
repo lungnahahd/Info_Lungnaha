@@ -26,9 +26,10 @@ def postview(request):
         detail = infolist.objects.get(id = code)
         return render(request,'post.html',{'detail':detail})
 
-def sample(request):
+@method_decorator(csrf_exempt,name='dispatch')
+def mainview(request):
     resultlist = infolist.objects.all()
-    return render(request,'index.html', {'resultlist' : resultlist})
+    return render(request,'index.html/', {'resultlist' : resultlist})
 
 def home(request):
     return render(request,'home.html')
