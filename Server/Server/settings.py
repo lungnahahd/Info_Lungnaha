@@ -82,17 +82,27 @@ WSGI_APPLICATION = 'Server.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'lungnaha_info',
+#         'USER' : 'root',
+#         'PASSWORD' : 'khd10810',
+#         'HOST' : 'localhost',
+#         'PORT' : '3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lungnaha_info',
-        'USER' : 'root',
-        'PASSWORD' : 'khd10810',
-        'HOST' : 'localhost',
+        'NAME': 'heroku_c6d6cb9468167f1',
+        'USER' : 'bec4a5cfd4bf56',
+        'PASSWORD' : '98434645',
+        'HOST' : 'us-cdbr-east-03.cleardb.com',
         'PORT' : '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
