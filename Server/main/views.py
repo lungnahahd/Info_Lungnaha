@@ -84,7 +84,7 @@ def logout(request):
     if request.method == "POST":    
         print("함수가 실행되었습니다.")
         auth.logout(request)
-        return redirect('http://localhost:8000/')
+        return redirect('https://lungnahablog.herokuapp.com/')
     else:
         return render(request,'logout.html')       
 
@@ -95,7 +95,7 @@ def login(request):
         user = auth.authenticate(request, username = username, password = password)
         if user is not None:
             auth.login(request, user)
-            return redirect('http://localhost:8000/')
+            return redirect('https://lungnahablog.herokuapp.com/')
         else :
             return render(request, 'login.html', {'error' : '아이디 또는 비밀번호가 옳지 않습니다. ㅜㅜ'})
     else:
@@ -107,13 +107,13 @@ def signup(request):
             user = User.objects.create_user(
                 username = request.POST["username"], password = request.POST["password1"])
             auth.login(request, user)
-            return redirect('http://localhost:8000/')
+            return redirect('https://lungnahablog.herokuapp.com/')
     return render(request,'signup.html')
 
 @method_decorator(csrf_exempt,name='dispatch')
 def deleteinfo(request):
     if request.method == "GET":
-        return render(request,'http://localhost:8000/')
+        return render(request,'https://lungnahablog.herokuapp.com/')
     elif request.method == "POST":
         code = request.POST.get('id')
         detail = infolist.objects.get(id = code)
@@ -123,7 +123,7 @@ def deleteinfo(request):
 @method_decorator(csrf_exempt,name='dispatch')
 def changedata(request):
     if request.method == "GET":
-        return render(request,'http://localhost:8000/')
+        return render(request,'https://lungnahablog.herokuapp.com/')
     elif request.method == "POST":
         code = request.POST.get('id')
         detail = infolist.objects.get(id = code)
@@ -132,7 +132,7 @@ def changedata(request):
 @method_decorator(csrf_exempt,name='dispatch')
 def update(request):
     if request.method == "GET":
-        return render(request,'http://localhost:8000/')
+        return render(request,'https://lungnahablog.herokuapp.com/')
     elif request.method == "POST":
         code = request.POST.get('id')
         detail = infolist.objects.get(id = code)
