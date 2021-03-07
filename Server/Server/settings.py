@@ -154,7 +154,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CKEDITOR_UPLOAD_PATH = 'upload/'
+CKEDITOR_UPLOAD_PATH = 'http://res.cloudinary.com/lungnaha/image/upload/'
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
