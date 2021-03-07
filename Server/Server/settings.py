@@ -14,6 +14,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os 
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -44,6 +46,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'ckeditor',
     'ckeditor_uploader',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -105,6 +109,14 @@ DATABASES = {
     }
 }
 
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME' : 'lungnaha',
+    'API_KEY': '379292184785644',
+    'API_SECRET': 'A7hqzn4F3fOvTGsjNFCDvVLQsPo'
+}
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -142,15 +154,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = 'upload/'
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL='/static/'
 STATIC_DIRS = [os.path.join(BASE_DIR,'static'),]
-MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
-MEDIA_URL = '/media/'
+
+MEDIA_ROOT = 'http://res.cloudinary.com/lungnaha/image'
+#MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+MEDIA_URL = '/image/'
+
+
+
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
