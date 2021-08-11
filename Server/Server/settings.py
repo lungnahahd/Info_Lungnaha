@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'Server.wsgi.application'
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'lungnaha_info',
 #         'USER' : 'root',
-#         'PASSWORD' : 'khd10810',
+#         'PASSWORD' : '*****',
 #         'HOST' : 'localhost',
 #         'PORT' : '3306',
 #     }
@@ -103,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'heroku_c6d6cb9468167f1',
         'USER' : 'bec4a5cfd4bf56',
-        'PASSWORD' : '98434645',
+        'PASSWORD' : '**********',
         'HOST' : 'us-cdbr-east-03.cleardb.com',
         'PORT' : '3306',
     }
@@ -112,8 +112,8 @@ DATABASES = {
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME' : 'lungnaha',
-    'API_KEY': '379292184785644',
-    'API_SECRET': 'A7hqzn4F3fOvTGsjNFCDvVLQsPo'
+    'API_KEY': '************',
+    'API_SECRET': '******************'
 }
 
 
