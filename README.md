@@ -8,7 +8,8 @@ Make my own Blog with Django
   * 글 작성 방법은 admin 사이트에 접속하거나 Authenticate 페이지에 접속해서 admin 계정 권한을 얻어야만 작성 가능
       * 글 수정이나 삭제도 해당 권한을 얻어야 수행 가능
   * 글 작성으로는 Ckeditor를 사용해서 이미지와 글을 함께 업로드 가능
-  * 배포는 Heroku를 통해서 배포 진행
+  * Cloudinary를 통해 이미지를 서버에 저장(Saas)
+  * 배포는 Heroku를 통해서 배포 진행(Paas)
 ----------------------------------
 ### 블로그 설명
   * Home
